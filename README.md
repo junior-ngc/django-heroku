@@ -6,14 +6,14 @@ Minimal configuration to host a Django project at Heroku
 * cd directory_name
 
 ## Create and activate your virtuanenv
-* virtualenv -p python3 .vEnv
+* python3 -m venv .vEnv
 * . .vEnv/bin/activate
 
 ## Installing django
 * pip install django
 
 ## Create the django project
-* django-admin startproject myproject
+* django-admin startproject myproject .
 
 ## Creating the Git repository
 * git init 
@@ -24,6 +24,7 @@ Minimal configuration to host a Django project at Heroku
 ** *pyc 
 * git add .
 * git commit -m 'First commit'
+* .env
 
 ## Hidding instance configuration
 * pip install python-decouple
@@ -82,6 +83,7 @@ Remember to grab the address of the app in this point
 * include your address at the ALLOWED_HOSTS directives in settings.py - Just the domain, make sure that you will take the protocol and slashes from the string
 
 ### Sending configs from .env to Heroku ( You have to be inside tha folther where .env files is)
+* heroku plugins:install heroku-config
 * heroku config:push
 
 ### To show heroku configs do
